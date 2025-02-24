@@ -15,8 +15,8 @@ const fetchPageAndExtractData = async () => {
     let emailed = false;
     let price, discountPrice;
     try {
-        // const response = await axios.get(`http://api.scraperapi.com?api_key=${apiKey}&url=${encodeURIComponent(targetUrl)}&render=true`);
-        const response = await axios.get(targetUrl);
+        const response = await axios.get(`http://api.scraperapi.com?api_key=${apiKey}&url=${encodeURIComponent(targetUrl)}&render=true`);
+        // const response = await axios.get(targetUrl);
         const $ = cheerio.load(response.data);
         const firstPriceElement = $('.price-container').first();
         price = parseFloat(firstPriceElement[0].children[1].attribs['data-price']);
