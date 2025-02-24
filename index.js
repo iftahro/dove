@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 4000;
 
 const fetchPageAndExtractData = async () => {
     const { MY_EMAIL: email, MY_API_KEY: apiKey, MY_PASS: pass, MY_URL: targetUrl, MY_PRICE_LIMIT: priceLimitStr } = process.env;
